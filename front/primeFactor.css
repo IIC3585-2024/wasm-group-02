@@ -6,12 +6,9 @@ body {
     color: #333;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+div {
+    margin-top: 20px;
+    text-align: center;
 }
 
 h1 {
