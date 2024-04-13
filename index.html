@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de factores primos</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script type='module' src='./src/index.js'></script>
+</head>
+<body>
+
+    <h1>Calculadora de Factores Primos</h1>
+
+    <div>
+        <input type="number" id="number">
+        <button id="triggerButton">Calcular</button>
+    </div>
+    
+    <div id="result">
+        <label>Resultado:</label>
+        <p>Resultado</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Método Utilizado</th>
+            <th>Resultado</th>
+            <th>Tiempo de ejecución</th>
+        </tr>
+        <tr>
+            <td>O2</td>
+            <td id="resultO2">-</td>
+            <td id="timeO2">-</td>
+        </tr>
+        <tr>
+            <td>O3</td>
+            <td id="resultO3">-</td>
+            <td id="timeO3">-</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td id="resultJS">-</td>
+            <td id="timeJS">-</td>
+        </tr>
+    </table>
+
+</body>
+</html>
