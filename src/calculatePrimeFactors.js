@@ -25,27 +25,42 @@ export async function calculatePrimeFactors() {
 
     // Calculate prime factors with O2
     let startO2 = performance.now();
-    let resultO2 = primeFactorsO2(number);
+    let resultO2 = await primeFactorsO2(number);
     let endO2 = performance.now();
     let timeO2 = endO2 - startO2;
     let primesArrayO2 = new Uint32Array(moduleO2.HEAPU32.buffer, resultO2, maxAmountOfPrimes);
-    changeResult(Array.from(primesArrayO2).toString(), "resultO2");
+    let finalArrayO2 = [];
+    for (let i = 0; i < maxAmountOfPrimes; i++) {
+        if (primesArrayO2[i] === 0) {
+            break;
+        }
+        finalArrayO2.push(primesArrayO2[i]);
+    }
+    changeResult(Array.from(finalArrayO2).toString(), "resultO2");
     changeTime(timeO2 + "ms", "timeO2");
     freeO2(primesArrayO2);
 
     // Calculate prime factors with O3
     let startO3 = performance.now();
-    let resultO3 = primeFactorsO3(number);
+    let resultO3 = await primeFactorsO3(number);
     let endO3 = performance.now();
     let timeO3 = endO3 - startO3;
     let primesArrayO3 = new Uint32Array(moduleO3.HEAPU32.buffer, resultO3, maxAmountOfPrimes);
-    changeResult(Array.from(primesArrayO3.toString()), "resultO3");
+    let finalArrayO3 = [];
+    console.log(primesArrayO3);
+    for (let i = 0; i < maxAmountOfPrimes; i++) {
+        if (primesArrayO3[i] === 0) {
+            break;
+        }
+        finalArrayO3.push(primesArrayO3[i]);
+    }
+    changeResult(Array.from(finalArrayO3).toString(), "resultO3");
     changeTime(timeO3 + "ms", "timeO3");
     freeO3(primesArrayO3);
 
     // Calculate prime factors with JS
     let startJS = performance.now();
-    let resultJS = primeFactors(number);
+    let resultJS = await primeFactors(number);
     let endJS = performance.now();
     let timeJS = endJS - startJS;
     changeResult(resultJS.toString(), "resultJS");
