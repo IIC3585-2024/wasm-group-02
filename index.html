@@ -12,14 +12,9 @@
     <h1>Calculadora de Factores Primos</h1>
 
     <div>
-        <input type="number" id="number">
+        <input type="number" id="number" oninput="javascript: if (this.value.length > 9) this.value = this.value.slice(0, 9);">
         <button id="triggerButton">Calcular</button>
     </div>
-    
-    <!-- <div id="result">
-        <label>Resultado:</label>
-        <p>Resultado</p>
-    </div> -->
 
     <table>
         <tr>

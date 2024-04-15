@@ -25,7 +25,7 @@ export async function calculatePrimeFactors() {
 
     // Calculate prime factors with O2
     let startO2 = performance.now();
-    let resultO2 = await primeFactorsO2(number);
+    let resultO2 = primeFactorsO2(number);
     let endO2 = performance.now();
     let timeO2 = endO2 - startO2;
     let primesArrayO2 = new Uint32Array(moduleO2.HEAPU32.buffer, resultO2, maxAmountOfPrimes);
@@ -42,7 +42,7 @@ export async function calculatePrimeFactors() {
 
     // Calculate prime factors with O3
     let startO3 = performance.now();
-    let resultO3 = await primeFactorsO3(number);
+    let resultO3 = primeFactorsO3(number);
     let endO3 = performance.now();
     let timeO3 = endO3 - startO3;
     let primesArrayO3 = new Uint32Array(moduleO3.HEAPU32.buffer, resultO3, maxAmountOfPrimes);
@@ -60,7 +60,7 @@ export async function calculatePrimeFactors() {
 
     // Calculate prime factors with JS
     let startJS = performance.now();
-    let resultJS = await primeFactors(number);
+    let resultJS = primeFactors(number);
     let endJS = performance.now();
     let timeJS = endJS - startJS;
     changeResult(resultJS.toString(), "resultJS");
